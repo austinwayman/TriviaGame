@@ -1,7 +1,20 @@
+$("#start").on("click", function(){
+  $("#intro").addClass("hidden");
+
+  $("#questions").removeClass("hidden")
+});
+
+
+$("#finishButton").on("click", function () {
+    $("#questions").addClass("hidden");
+});
+
+
+
 
 // timer functions----------------------------------------------------------------
 
-var number = 100;
+var number = 120;
 
 var intervalId;
 
@@ -13,7 +26,7 @@ function run() {
 function decrement() {
     number--;
     $("#show-number").html("<h2>" + "Time Remaining: " + number + "</h2>");
-
+    
     if (number === 0) {
         stop();
         alert("Time Up!");
@@ -109,4 +122,5 @@ function check() {
     document.getElementById("picture").src = pictures[range]; 
 
 }
+
 
