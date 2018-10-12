@@ -16,7 +16,7 @@ var sound3 = new Audio('assets/images/office.mp3');
 
 // timer functions----------------------------------------------------------------
 
-var number = 120;
+var number = 122;
 
 var intervalId;
 
@@ -31,7 +31,9 @@ function decrement() {
     
     if (number === 0) {
         stop();
-        alert("Time Up!");
+        alert("Time Up! Refresh page to retry!");
+        sound2.play();
+        
     }
 }
 
@@ -104,12 +106,12 @@ function check() {
     
   
     var range;
-        if (correct < 1){
+        if (correct <= 1){
             range = 2;
             sound1.play();
         }
 
-        if (correct > 0 && correct < 5) {
+        if (correct >= 2 && correct < 5) {
             range = 1;
             sound2.play();
         }
