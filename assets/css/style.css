@@ -21,3 +21,11 @@ body {
 .hidden {
     display:none;
 }
+
+.qs {
+    font-size: 20px;
+}
+
+#mc {
+    font-size: 10px;
+}

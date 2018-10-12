@@ -9,7 +9,9 @@ $("#finishButton").on("click", function () {
     $("#questions").addClass("hidden");
 });
 
-
+var sound1 = new Audio('assets/images/nogodno.mp3');
+var sound2 = new Audio('assets/images/idiot.mp3');
+var sound3 = new Audio('assets/images/office.mp3');
 
 
 // timer functions----------------------------------------------------------------
@@ -99,18 +101,22 @@ function check() {
 
     var messages = ["Great Job!", "That's just okay", "You really need to do better"];
     var pictures = ["assets/images/win.gif", "assets/images/moron.gif", "assets/images/nogodno.gif"];
+    
   
     var range;
         if (correct < 1){
             range = 2;
+            sound1.play();
         }
 
         if (correct > 0 && correct < 5) {
             range = 1;
+            sound2.play();
         }
 
-        if (correct > 9) {
+        if (correct >= 9) {
             range = 0;
+            sound3.play();
         }
 
 
